@@ -1,0 +1,14 @@
+language: python
+python:
+    - "2.6"
+    - "2.7"
+    - "3.2"
+    - "3.3"
+install: "pip install -r test-requirements.txt"
+before_script: "pip freeze -r test-requirements.txt"
+before_script: "pip freeze -l -r test-requirements.txt"
+before_script: "pip freeze -r -r test-requirements.txt"
+before_script: "set"
+before_script: "ls -al"
+before_script: "ls -al .pip"
+script: "python -m  unittest"
