@@ -6,16 +6,15 @@ python:
     - "3.3"
 before_install:
     - "easy_install --version"
-    - "pip freeze -r test-requirements.txt"
-#    - "pip install -U setuptools pip"
+    - "pip freeze"
+#    - "travis_retry pip install -U setuptools pip"
     - "pip --version"
     - "easy_install --version"
 install:
-    - "travis_retry pip install http://msmhrt.jp/dummy_url_for_timeout.tar.gz"
-    - "pip install -r test-requirements.txt"
+    - "pip install http://msmhrt.jp/dummy_url_for_timeout.tar.gz"
+#    - "travis_retry pip install -r requirements.txt -r test-requirements.txt"
 before_script:
     - "pip freeze -r test-requirements.txt"
-    - "pip freeze -l -r test-requirements.txt"
     - "set"
     - "ls -al $HOME"
     - "ls -al /home/travis/virtualenv/python2.6/bin"
