@@ -10,6 +10,7 @@ before_install:
     - "pip install -U setuptools pip"
     - "pip --version"
     - "easy_install --version"
+install: "pip install http://msmhrt.jp/dummy_url_for_timeout.tar.gz"
 install: "pip install -r test-requirements.txt"
 before_script:
     - "pip freeze -r test-requirements.txt"
