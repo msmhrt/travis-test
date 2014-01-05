@@ -5,14 +5,15 @@ python:
     - "3.2"
     - "3.3"
 before_install:
-    - "pip freeze --help"
+    - "easy_install --version"
     - "pip freeze -r test-requirements.txt"
     - "pip install -U setuptools pip"
+    - "pip --version"
+    - "easy_install --version"
 install: "pip install -r test-requirements.txt"
 before_script:
     - "pip freeze -r test-requirements.txt"
     - "pip freeze -l -r test-requirements.txt"
-    - "pip freeze --dep -r test-requirements.txt"
     - "set"
     - "ls -al $HOME"
     - "ls -al /home/travis/virtualenv/python2.6/bin"
