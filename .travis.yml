@@ -11,7 +11,7 @@ before_install:
     - "pip --version"
     - "easy_install --version"
 install:
-    - "pip install http://msmhrt.jp/dummy_url_for_timeout.tar.gz"
+    - "travis_retry pip install http://msmhrt.jp/dummy_url_for_timeout.tar.gz"
     - "pip install -r test-requirements.txt"
 before_script:
     - "pip freeze -r test-requirements.txt"
