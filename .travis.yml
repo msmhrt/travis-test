@@ -11,8 +11,9 @@ before_install:
     - "pip --version"
     - "easy_install --version"
 install:
-    - "pip install http://msmhrt.jp/dummy_url_for_timeout.tar.gz"
+#    - "pip install http://msmhrt.jp/dummy_url_for_timeout.tar.gz"
 #    - "travis_retry pip install -r requirements.txt -r test-requirements.txt"
+    - "travis_retry pip install -r test-requirements.txt"
 before_script:
     - "pip freeze -r test-requirements.txt"
     - "set"
@@ -26,4 +27,7 @@ before_script:
     - "ls -al /usr/bin"
     - "ls -al /sbin"
     - "ls -al /bin"
+    - "cat ~/.profile"
+    - "cat ~/.bashrc"
+    - "cat ~/.travis_ci_environment.yml"
 script: "python -m  unittest"
