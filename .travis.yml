@@ -12,7 +12,7 @@ before_install:
     - "which python3.3"
     - "which python3.4"
     - "ls -al /opt/python/3.4.0/bin"
-    - "ls -al /opt/python/pypi-2.2.1/bin"
+    - "ls -al /opt/python/pypy-2.2.1/bin"
     - "easy_install --version"
     - "pip freeze"
     - "travis_retry pip install -U setuptools"
