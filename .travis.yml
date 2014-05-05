@@ -1,12 +1,13 @@
 language: python
 python:
-    - "2.6"
-    - "2.7"
-    - "3.2"
-    - "3.3.5"
-    - "3.3.4"
-    - "3.4.0"
+    - "3.4"
 before_install:
+    - "echo ${PWD}"
+    - "which python"
+    - "deactivate"
+    - "cd /opt/python; for version in `ls -r`; do PATH=${PWD}/${version}/bin:${PATH}; done; cd ${OLDPWD}; echo PATH=${PATH}"
+    - "echo ${PWD}"
+    - "which python"
     - "easy_install --version"
     - "pip freeze"
     - "travis_retry pip install -U setuptools"
